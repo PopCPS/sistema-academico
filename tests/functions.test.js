@@ -52,3 +52,15 @@ describe('Test function obterStatus', () => {
         expect(obterStatus(0.0)).toHaveReturned('Reprovado por média')
     })
 })
+  });
+  it("Should throw error with number with more than one decimal place", () => {
+    expect(() => lancarNotas(7.5, 8.256)).toThrow(
+      'Erro: "Nota de 2UP inválida"'
+    );
+  });
+  it("Should throw error with NaN", () => {
+    expect(() => lancarNotas("sete", 8.2)).toThrow(
+      'Erro: "Entradas devem ser numéricas"'
+    );
+  });
+});
