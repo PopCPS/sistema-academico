@@ -1,4 +1,4 @@
-export const lancarNotas = ( n1, n2 ) => {
+const lancarNotas = ( n1, n2 ) => {
 
     if (n1 < 0 || n1 > 10) {
         throw new Error('Erro: "Nota de 1UP inválida"')
@@ -22,3 +22,5 @@ export const lancarNotas = ( n1, n2 ) => {
 
     return "Notas salvas com sucesso"
 }
+
+module.exports= { lancarNotas }

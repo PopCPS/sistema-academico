@@ -1,4 +1,4 @@
-import { lancarNotas } from "../src/lancamentoNotas"
+const { lancarNotas } = require('../src/lancamentoNotas')
 
 describe('Test function lancarNotas', () => {
     it("Should return 'Notas salvas com sucesso'", () => {
