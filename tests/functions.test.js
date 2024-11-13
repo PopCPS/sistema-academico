@@ -1,4 +1,5 @@
 const { lancarNotas } = require('../src/lancamentoNotas')
+const { obterStatus } = require('../src/exibirStatus')
 
 describe('Test function lancarNotas', () => {
     it("Should return 'Notas salvas com sucesso'", () => {
@@ -28,5 +29,26 @@ describe('Test function lancarNotas', () => {
         expect(() => lancarNotas('sete', 8.2)).toThrow(
             'Erro: "Entradas devem ser numéricas"'
         )
+    })
+})
+
+describe('Test function obterStatus', () => {
+    it("Should return 'Reprovado por média'", () => {
+        expect(obterStatus(3.5)).toHaveReturned('Reprovado por média')
+    })
+    it("Should return 'Aguardando a final'", () => {
+        expect(obterStatus(4.0)).toHaveReturned('Aguardando final')
+    })
+    it("Should return 'Aguardando a final'", () => {
+        expect(obterStatus(5.5)).toHaveReturned('Aguardando final')
+    })
+    it("Should return 'Aprovado por média'", () => {
+        expect(obterStatus(6.0)).toHaveReturned('Aprovado por média')
+    })
+    it("Should return 'Aprovado por média'", () => {
+        expect(obterStatus(7.5)).toHaveReturned('Aprovado por média')
+    })
+    it("Should return 'Reprovado por média'", () => {
+        expect(obterStatus(0.0)).toHaveReturned('Reprovado por média')
     })
 })
