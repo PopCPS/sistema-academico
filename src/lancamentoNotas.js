@@ -4,7 +4,7 @@ const lancarNotas = ( n1, n2 ) => {
         throw new Error('Erro: "Nota de 1UP inválida"')
     }
 
-    if (n1 % 1 !== 0 && Math.floor(n1 * 10) / 10 === n1) {
+    if (!(n1 % 1 !== 0 && Math.floor(n1 * 10) / 10 === n1)) {
         throw new Error('Erro: "Nota de 1UP inválida"')
     }
 
@@ -12,7 +12,7 @@ const lancarNotas = ( n1, n2 ) => {
         throw new Error('Erro: "Nota de 2UP inválida"')
     }
 
-    if (n2 % 1 !== 0 && Math.floor(n2 * 10) / 10 === n2) {
+    if (!(n2 % 1 !== 0 && Math.floor(n2 * 10) / 10 === n2)) {
         throw new Error('Erro: "Nota de 2UP inválida"')
     }
 
